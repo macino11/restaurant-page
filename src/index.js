@@ -1,15 +1,39 @@
-import pagePhoto from "./images/restaurant-page-photo.jpeg"
+import "./styles.css";
+import { pageLoadFunction } from "./initialPageLoad.js"
+import { createHomeTab } from "./homeTab.js"
+import { createMenuTab } from "./menuTab.js"
+import { createAboutTab } from "./aboutTab.js"
 
-const contentDiv = document.querySelector("#content")
 
-const contentText = document.createElement("p")
-contentText.textContent = "This restaurant is in the USA, Ohio. It has a very rich menu for every culture. There are japanese, german, italian, and turkish foods in the restaurant. Don't forget the try these delicious foods."
-const contentHeading = document.createElement("h1")
-contentHeading.textContent = "Best Restaurant In the World"
+pageLoadFunction()
 
-const newPhoto = document.createElement("img")
-newPhoto.src = pagePhoto
+const nav = document.querySelector("nav") 
+const homeBtn = document.querySelector(".homeBtn")
+const menuBtn = document.querySelector(".menuBtn")
+const aboutBtn = document.querySelector(".aboutBtn")
 
-contentDiv.appendChild(contentHeading)
-contentDiv.appendChild(contentText)
-contentDiv.appendChild(newPhoto)
+homeBtn.addEventListener("click", () => {
+    let content = document.querySelector("#content")
+    content.replaceChildren()
+    createHomeTab()
+})
+
+nav.appendChild(homeBtn)
+
+menuBtn.addEventListener("click", () => {
+    let content = document.querySelector("#content")
+    content.replaceChildren()
+    createMenuTab()
+})
+
+nav.appendChild(menuBtn)
+
+aboutBtn.addEventListener("click", () => {
+    let content = document.querySelector("#content")
+    content.replaceChildren()
+    createAboutTab()
+})
+
+nav.appendChild(aboutBtn)
+
+

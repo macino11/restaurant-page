@@ -1,10 +1,14 @@
 {
+  "homepage": "https://macino11.github.io/restaurant-page/",
   "name": "restaurant-page",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +16,7 @@
   "type": "module",
   "devDependencies": {
     "css-loader": "^7.1.5",
+    "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.8",
     "style-loader": "^4.0.0",
